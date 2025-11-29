@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn47jk3rfsev7"]
+
+[ext_resource type="Texture2D" uid="uid://dj67j1veyogdi" path="res://Assets/Sprites/Creatures.png" id="2_x1rqp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xgxfi"]
+radius = 4.0
+height = 10.0
+
+[node name="Enemigo" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_x1rqp")
+region_enabled = true
+region_rect = Rect2(90, 70, 9, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xgxfi")
+
+[node name="SonidoDaño" type="AudioStreamPlayer2D" parent="."]

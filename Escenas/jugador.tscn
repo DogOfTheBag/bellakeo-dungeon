@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck24qvjvu3w2"]
+
+[ext_resource type="Texture2D" uid="uid://dy253l2ijyuqb" path="res://Assets/Sprites/People.png" id="1_pd7u1"]
+[ext_resource type="Texture2D" uid="uid://dq3boaqnrlhny" path="res://Assets/Sprites/Weapons.png" id="2_ewkf5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dpyx"]
+radius = 3.0
+height = 9.0
+
+[node name="Jugador" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 9
+motion_mode = 1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_pd7u1")
+region_enabled = true
+region_rect = Rect2(2, 121, 7, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4dpyx")
+
+[node name="Arma" type="Node2D" parent="."]
+
+[node name="SpriteArma" type="Sprite2D" parent="Arma"]
+position = Vector2(0, -3)
+rotation = -0.7853982
+texture = ExtResource("2_ewkf5")
+region_enabled = true
+region_rect = Rect2(21, 81, 8, 8)
+
+[node name="Boca" type="Node2D" parent="Arma"]
+position = Vector2(0, -5)
+
+[node name="SonidoDisparo" type="AudioStreamPlayer2D" parent="."]
+
+[node name="SonidoDaño" type="AudioStreamPlayer2D" parent="."]
+
+[node name="SonidoObjeto" type="AudioStreamPlayer2D" parent="."]
